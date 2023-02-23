@@ -116,3 +116,5 @@ class ProductoFile:
             destino.close()
         remove(self.__archivo)
         rename(self.__temporal, self.__archivo)
+
+# FIN MODEL.PY
