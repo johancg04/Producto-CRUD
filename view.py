@@ -13,7 +13,7 @@ class Application:
     def __init__(self):
         self.ventana = tk.Tk()
         self.obj = ProductoController()
-        # Variables
+        # Variables de la clase
         self.vCodigo = tk.StringVar()
         self.vNombre = tk.StringVar()
         self.vCategoria = tk.StringVar()

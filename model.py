@@ -3,6 +3,8 @@ from io import open
 from os.path import exists
 from os import remove, rename
 
+# clase producto file
+
 
 class ProductoFile:
     # construir
