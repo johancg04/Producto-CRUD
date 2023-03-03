@@ -24,7 +24,7 @@ class Application:
         self.vfecha.set(date.today().strftime("%d/%m/%Y"))
 
         # VENTANAS
-        self.ventana.title(":: MANTENIMIENTO DE PRODUCTOS ::")
+        self.ventana.title(":: CRUD DE PRODUCTOS ::")
         self.ventana.geometry("495x580")
         self.ventana.configure(background="Cyan")
 
