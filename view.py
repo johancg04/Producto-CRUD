@@ -7,6 +7,12 @@ from controller import *
 from entity import *
 from tkinter import PhotoImage
 
+i_con_tilde = 'i' + u'\u0301'
+o_con_tilde = 'o' + u'\u0301'
+
+categoria_texto = 'Categor' + i_con_tilde + 'a'
+codigo_texto = 'C' + o_con_tilde + 'digo'
+
 
 class Application:
     # constructor
@@ -32,7 +38,7 @@ class Application:
         self.Label1 = tk.Label(text="CRUD DE PRODUCTOS", bg="Cyan", fg="red", font=(
             "Arial", 16, "bold")).place(x=120, y=10)
         # ETIQUETAS
-        self.label2 = tk.Label(text="Codigo", bg="Cyan",
+        self.label2 = tk.Label(text=codigo_texto, bg="Cyan",
                                fg="red").place(x=50, y=50)
         self.txtbox1 = tk.Entry(
             self.ventana, textvariable=self.vCodigo, width=10).place(x=175, y=50)
@@ -42,7 +48,7 @@ class Application:
         self.txtbox2 = tk.Entry(textvariable=self.vNombre,
                                 width=30).place(x=175, y=80)
 
-        self.label4 = tk.Label(text="Categoria", bg="Cyan",
+        self.label4 = tk.Label(text=categoria_texto, bg="Cyan",
                                fg="red").place(x=50, y=110)
         self.txtbox3 = tk.Entry(textvariable=self.vCategoria,
                                 width=10).place(x=175, y=110)
@@ -103,7 +109,7 @@ class Application:
         self.tv.heading('#0', text='', anchor=CENTER)
         self.tv.heading('Codigo', text='Id', anchor=CENTER)
         self.tv.heading('Nombre', text='Nombre', anchor=tk.W)
-        self.tv.heading('Categoria', text='Categoria', anchor=CENTER)
+        self.tv.heading('Categoria', text=categoria_texto, anchor=CENTER)
         self.tv.heading('Precio', text='Precio', anchor=tk.W)
         self.tv.heading('Cantidad', text='Cantidad', anchor=tk.W)
         self.tv.pack(side=BOTTOM)
