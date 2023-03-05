@@ -76,16 +76,16 @@ class Application:
             text="Grabar", command=self.insertardatos, width=8).place(x=40, y=230)
 
         self.btn2 = tk.Button(
-            text="Modificar", command=self.actualizardatos, width=8).place(x=110, y=230)
+            text="Modificar", command=self.actualizardatos, width=8).place(x=120, y=230)
 
         self.btn3 = tk.Button(
-            text="Eliminar", command=self.eliminar, width=8).place(x=190, y=230)
+            text="Eliminar", command=self.eliminar, width=8).place(x=200, y=230)
 
         self.btn4 = tk.Button(
-            text="Listar", command=self.listardatos, width=8).place(x=260, y=230)
+            text="Listar", command=self.listardatos, width=8).place(x=280, y=230)
 
         self.btn5 = tk.Button(
-            text="Limpiar", command=self.nuevo, width=8).place(x=320, y=230)
+            text="Limpiar", command=self.nuevo, width=8).place(x=360, y=230)
 
         # frame
         self.tree_frame = tk.Frame(self.ventana)
