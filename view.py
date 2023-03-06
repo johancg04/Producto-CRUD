@@ -31,7 +31,7 @@ class Application:
 
         # VENTANAS
         self.ventana.title(":: CRUD DE PRODUCTOS ::")
-        self.ventana.geometry("495x580")
+        self.ventana.geometry("540x580")
         self.ventana.configure(background="Cyan")
 
         # TITULO
@@ -98,9 +98,9 @@ class Application:
         self.tv.column('#0', width=0, stretch=NO)
         self.tv.column('Codigo', anchor=CENTER, width=60, minwidth=60)
         self.tv.column('Nombre', anchor=tk.W, width=120, minwidth=120)
-        self.tv.column('Categoria', anchor=CENTER, width=120, minwidth=120)
-        self.tv.column('Precio', anchor=tk.W, width=120, minwidth=120)
-        self.tv.column('Cantidad', anchor=tk.W, width=120, minwidth=120)
+        self.tv.column('Categoria', anchor=tk.W, width=120, minwidth=120)
+        self.tv.column('Precio', anchor=tk.E, width=110, minwidth=110)
+        self.tv.column('Cantidad', anchor=tk.E, width=110, minwidth=110)
         vsb = ttk.Scrollbar(
             self.tree_frame, orient="vertical", command=self.tv.yview)
         vsb.pack(side='right', fill='y')
@@ -108,10 +108,10 @@ class Application:
 
         self.tv.heading('#0', text='', anchor=CENTER)
         self.tv.heading('Codigo', text='Id', anchor=CENTER)
-        self.tv.heading('Nombre', text='Nombre', anchor=tk.W)
+        self.tv.heading('Nombre', text='Nombre', anchor=CENTER)
         self.tv.heading('Categoria', text=categoria_texto, anchor=CENTER)
-        self.tv.heading('Precio', text='Precio', anchor=tk.W)
-        self.tv.heading('Cantidad', text='Cantidad', anchor=tk.W)
+        self.tv.heading('Precio', text='Precio', anchor=CENTER)
+        self.tv.heading('Cantidad', text='Cantidad', anchor=CENTER)
         self.tv.pack(side=BOTTOM)
         self.listardatos()
         self.ventana.mainloop()
