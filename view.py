@@ -51,7 +51,7 @@ class Application:
         self.label4 = tk.Label(text=categoria_texto, bg="Cyan",
                                fg="red").place(x=50, y=110)
         self.txtbox3 = tk.Entry(textvariable=self.vCategoria,
-                                width=10).place(x=175, y=110)
+                                width=30).place(x=175, y=110)
 
         self.label5 = tk.Label(text="Precio", bg="Cyan",
                                fg="red").place(x=50, y=140)
