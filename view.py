@@ -99,8 +99,8 @@ class Application:
         self.tv.column('Codigo', anchor=CENTER, width=60, minwidth=60)
         self.tv.column('Nombre', anchor=tk.W, width=120, minwidth=120)
         self.tv.column('Categoria', anchor=tk.W, width=120, minwidth=120)
-        self.tv.column('Precio', anchor=tk.W, width=120, minwidth=120)
-        self.tv.column('Cantidad', anchor=tk.W, width=120, minwidth=120)
+        self.tv.column('Precio', anchor=tk.E, width=110, minwidth=110)
+        self.tv.column('Cantidad', anchor=tk.E, width=110, minwidth=110)
         vsb = ttk.Scrollbar(
             self.tree_frame, orient="vertical", command=self.tv.yview)
         vsb.pack(side='right', fill='y')
