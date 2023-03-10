@@ -82,10 +82,10 @@ class Application:
             text="Eliminar", command=self.eliminar, width=8).place(x=200, y=250)
 
         self.btn4 = tk.Button(
-            text="Listar", command=self.listardatos, width=8).place(x=370, y=320)
+            text="Listar", command=self.listardatos, width=8).place(x=375, y=320)
 
         self.btn5 = tk.Button(
-            text="Limpiar", command=self.nuevo, width=8).place(x=450, y=320)
+            text="Limpiar", command=self.nuevo, width=8).place(x=455, y=320)
 
         # frame
         self.tree_frame = tk.Frame(self.ventana)
