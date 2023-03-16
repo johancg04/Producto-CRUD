@@ -3,11 +3,11 @@ from entity import *
 
 
 class Prueba:
-    produ = Producto("P001", "Armario", 'Hogar', 12.0, 3)
-    obj = ProductoController()
-    msg = obj.procesarProducto(produ, 1)
-    print(msg)
+    produ = Producto("P009", "Armario", 'Hogar', 12.0, 3)
+    controller = ProductoController()
+    message = controller.procesarProducto(produ, ADD)
+    print(message)
 
 
-# prueba
+# ejecutar prueba
 p = Prueba()
