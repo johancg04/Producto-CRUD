@@ -19,7 +19,7 @@ class ProductoFile:
 
     def adicionar(self, produ):
         fichero = None
-        sw = False
+        added = False
         try:
             fichero = open(self.__archivo, 'a')
             datos = produ.codigo+'#'+produ.nombre+'#'+produ.categoria + \
@@ -28,13 +28,12 @@ class ProductoFile:
             produ = self.buscar(produ.codigo)
             if produ == None:
                 fichero.write(datos)
-            else:
-                sw = True
+                added = True
         except IOError as e:
             print('Error :', e)
         finally:
             fichero.close()
-        return sw
+        return added
 
     def listar(self):
         fichero = None
@@ -72,48 +71,48 @@ class ProductoFile:
         return producto
 
     def actualizar(self, produ):
-        fuente = None
-        destino = None
+        archivo_fuente = None
+        archivo_destino = None
         try:
-            fuente = open(self.__archivo, "r", encoding="utf8")
-            destino = open(self.__temporal, "w", encoding="utf8")
-            lineas = fuente.readlines()
+            archivo_fuente = open(self.__archivo, "r", encoding="utf8")
+            archivo_destino = open(self.__temporal, "w", encoding="utf8")
+            lineas_fuente = archivo_fuente.readlines()
             separador = "#"
-            for linea in lineas:
-                dato = linea.split(separador)
-                if dato[0] == produ.codigo:
-                    datos = produ.codigo+"#"+produ.nombre+"#"+produ.categoria + \
+            for linea_fuente in lineas_fuente:
+                datos = linea_fuente.split(separador)
+                if datos[0] == produ.codigo:
+                    nueva_linea = produ.codigo+"#"+produ.nombre+"#"+produ.categoria + \
                         '#'+str(produ.precio)+'#'+str(produ.cantidad)+'\n'
-                    destino.write(datos)
+                    archivo_destino.write(nueva_linea)
                 else:
-                    destino.write(linea)
+                    archivo_destino.write(linea_fuente)
         except IOError as e:
             print("Error : ", e)
         finally:
-            fuente.close()
-            destino.close()
+            archivo_fuente.close()
+            archivo_destino.close()
         remove(self.__archivo)
         rename(self.__temporal, self.__archivo)
 
     def eliminar(self, produ):
-        fuente = None
-        destino = None
+        archivo_fuente = None
+        archivo_destino = None
         try:
-            fuente = open(self.__archivo, "r", encoding="utf8")
-            destino = open(self.__temporal, "w", encoding="utf8")
-            lineas = fuente.readlines()
+            archivo_fuente = open(self.__archivo, "r", encoding="utf8")
+            archivo_destino = open(self.__temporal, "w", encoding="utf8")
+            lineas_fuente = archivo_fuente.readlines()
             separador = "#"
-            for linea in lineas:
-                dato = linea.split(separador)
+            for linea_fuente in lineas_fuente:
+                dato = linea_fuente.split(separador)
                 if dato[0] == produ.codigo:
                     pass
                 else:
-                    destino.write(linea)
+                    archivo_destino.write(linea_fuente)
         except IOError as e:
             print("Error : ", e)
         finally:
-            fuente.close()
-            destino.close()
+            archivo_fuente.close()
+            archivo_destino.close()
         remove(self.__archivo)
         rename(self.__temporal, self.__archivo)
 
